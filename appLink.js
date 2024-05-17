@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // function startApp()
     // {
-    //     const openAppScheme = `unitydl://mindvr?room=2'; //${encodeURIComponent(page)}}`;
+    //     const openAppScheme = `unitydl://mindvr?room=${encodeURIComponent(page)}}`;
     // 
     //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
     //         // iOS
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //         // Other platforms or fallback
     //         window.location.href = appStoreURL;
     //     }
-    // } 
-        appLink.addEventListener('click', function(e) {
+    // }
+    appLink.addEventListener('click', function(e) {
         e.preventDefault();
 
         const appScheme = `unitydl://mindvr?2`;
