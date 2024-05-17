@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const appLink = document.getElementById('appLink');
+    //const appLink = document.getElementById('appLink');
 
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get('room');
@@ -9,26 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // function startApp()
-    // {
-    //     const openAppScheme = `unitydl://mindvr?room=${encodeURIComponent(page)}}`;
-    // 
-    //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    //         // iOS
-    //         openApp(openAppScheme, appStoreURLiOS);
-    //     } else if (/android/i.test(userAgent)) {
-    //         // Android
-    //         openApp(openAppScheme, appStoreURL);
-    //     } else {
-    //         // Other platforms or fallback
-    //         window.location.href = appStoreURL;
-    //     }
-    // }
-    appLink.addEventListener('click', function(e) {
-        e.preventDefault();
-
+    function startApp()
+    {
         const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
-        
+
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
             openApp(appScheme, appStoreURLiOS);
@@ -39,7 +23,23 @@ document.addEventListener("DOMContentLoaded", function() {
             // Other platforms or fallback
             window.location.href = appStoreURL;
         }
-    });
+    }
+    // appLink.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //
+    //     const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
+    //    
+    //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    //         // iOS
+    //         openApp(appScheme, appStoreURLiOS);
+    //     } else if (/android/i.test(userAgent)) {
+    //         // Android
+    //         openApp(appScheme, appStoreURL);
+    //     } else {
+    //         // Other platforms or fallback
+    //         window.location.href = appStoreURL;
+    //     }
+    // });
 
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
@@ -59,8 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if (endTime - startTime < timeout + 100) {
                 window.location.href = appStoreURL;
             }
+            else
+            {
+                window.close();
+            }
         }, timeout);
     }
 
-    //startApp();
+    startApp();
 });
