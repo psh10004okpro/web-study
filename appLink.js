@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function startApp()
     {
-        const openAppScheme = `unitydl://mindvr?room=${encodeURIComponent(page)}}`;
+        const openAppScheme = `unitydl://mindvr?room=${encodeURIComponent(page)}`;
      
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
