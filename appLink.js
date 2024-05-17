@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //const appLink = document.getElementById('appLink');
+    const appLink = document.getElementById('appLink');
 
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get('room');
     
-    const appScheme = 'unitydl://mindvr?2'; // 앱 스킴 (앱에서 정의한 스킴을 사용)
+    //const appScheme = 'unitydl://mindvr?2'; // 앱 스킴 (앱에서 정의한 스킴을 사용)
     const appStoreURL = 'https://play.google.com/store/apps/details?id=com.Mindvridge'; // 앱 스토어 URL (Google Play 예시)
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
     appLink.addEventListener('click', function(e) {
         e.preventDefault();
+
+        const appScheme = `unitydl://mindvr?room=${encodeURIComponent(page)}}`;
+        
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
             openApp(appScheme, appStoreURLiOS);
