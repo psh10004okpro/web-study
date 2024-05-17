@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    appLink.addEventListener('click', function(e) {
-        e.preventDefault();
+    function startApp()
+    {
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
             openApp(appScheme, appStoreURLiOS);
@@ -17,7 +17,20 @@ document.addEventListener("DOMContentLoaded", function() {
             // Other platforms or fallback
             window.location.href = appStoreURL;
         }
-    });
+    }
+    // appLink.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    //         // iOS
+    //         openApp(appScheme, appStoreURLiOS);
+    //     } else if (/android/i.test(userAgent)) {
+    //         // Android
+    //         openApp(appScheme, appStoreURL);
+    //     } else {
+    //         // Other platforms or fallback
+    //         window.location.href = appStoreURL;
+    //     }
+    // });
 
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
@@ -39,4 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, timeout);
     }
+
+    startApp();
 });
