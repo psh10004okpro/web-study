@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //         // Other platforms or fallback
     //         window.location.href = appStoreURL;
     //     }
-    // }
+    // } 
         appLink.addEventListener('click', function(e) {
         e.preventDefault();
 
