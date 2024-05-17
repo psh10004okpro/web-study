@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
     //         window.location.href = appStoreURL;
     //     }
     // }
-    appLink.addEventListener('click', function(e) {
+      appLink.addEventListener('click', function(e) {
         e.preventDefault();
 
-        const appScheme = `unitydl://mindvr?room=2'; 
+        const appScheme = `unitydl://mindvr?room=${2}}`;
         
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
