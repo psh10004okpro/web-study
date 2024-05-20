@@ -11,18 +11,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const appScheme = `unitydl://mindvr?2`;
     function startApp()
     {
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // iOS
-                openApp(appScheme, appStoreURLiOS);
-            } else if (/android/i.test(userAgent)) {
-                // Android
-                openApp(appScheme, appStoreURL);
-            } else {
-                // Other platforms or fallback
-                window.location.href = appStoreURL;
-            }
 
-
+            setTimeout(function() {
+             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        // iOS
+                        openApp(appScheme, appStoreURLiOS);
+                    } else if (/android/i.test(userAgent)) {
+                        // Android
+                        openApp(appScheme, appStoreURL);
+                    } else {
+                        // Other platforms or fallback
+                        window.location.href = appStoreURL;
+                    }
+                
+                
+        }, 3000);
     }
     // appLink.addEventListener('click', function(e) {
     //     e.preventDefault();
