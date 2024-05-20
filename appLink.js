@@ -8,43 +8,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const timeout = 1500;
-    // function startApp()
-    // {
-    //     const appScheme = 'unitydl://mindvr?2';
-    //
-    //     setTimeout(function() {
-    //
-    //         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    //             // iOS
-    //             openApp(appScheme, appStoreURLiOS);
-    //         } else if (/android/i.test(userAgent)) {
-    //             // Android
-    //             openApp(appScheme, appStoreURL);
-    //         } else {
-    //             // Other platforms or fallback
-    //             window.location.href = appStoreURL;
-    //         }
-    //
-    //     }, timeout);
-    //
-    //
-    // }
-    appLink.addEventListener('click', function(e) {
-        e.preventDefault();
+    const appScheme = `unitydl://mindvr?2`;
+    function startApp()
+    {
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // iOS
+                openApp(appScheme, appStoreURLiOS);
+            } else if (/android/i.test(userAgent)) {
+                // Android
+                openApp(appScheme, appStoreURL);
+            } else {
+                // Other platforms or fallback
+                window.location.href = appStoreURL;
+            }
 
-        const appScheme = `unitydl://mindvr?2`;
 
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            // iOS
-            openApp(appScheme, appStoreURLiOS);
-        } else if (/android/i.test(userAgent)) {
-            // Android
-            openApp(appScheme, appStoreURL);
-        } else {
-            // Other platforms or fallback
-            window.location.href = appStoreURL;
-        }
-    });
+    }
+    // appLink.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //
+    //     const appScheme = `unitydl://mindvr?2`;
+    //
+    //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    //         // iOS
+    //         openApp(appScheme, appStoreURLiOS);
+    //     } else if (/android/i.test(userAgent)) {
+    //         // Android
+    //         openApp(appScheme, appStoreURL);
+    //     } else {
+    //         // Other platforms or fallback
+    //         window.location.href = appStoreURL;
+    //     }
+    // });
 
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
@@ -70,5 +65,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }, timeout);
     }
 
-    //startApp();
+    startApp();
 });
