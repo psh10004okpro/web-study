@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
      
         //const urlParams = new URLSearchParams(window.location.search);
         //const page = urlParams.get('room');
-        const appScheme = 'unitydl://mindvr?';
+        const appScheme = 'unitydl://mindvr';
 
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
