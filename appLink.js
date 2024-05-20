@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
-        const timeout = 1500;
+        const timeout = 3000;
         const iframe = document.createElement('iframe');
         iframe.style.border = 'none';
         iframe.style.width = '1px';
