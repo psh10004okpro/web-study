@@ -10,13 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function startApp()
     {
+        try {
+            //const urlParams = new URLSearchParams(window.location.search);
+            //const page = urlParams.get('room');
+            const appScheme = 'unitydl://mindvr?2';
 
-        //const url = new URL(window.location.search);
-        
-        //const urlParams = new URLSearchParams(window.location.search);
-        //const page = url.get("room");
-        //const appScheme = 'unitydl://mindvr?' + page;
-        const appScheme = 'unitydl://mindvr?2';
+            console.log(appScheme)
+        } catch (e) {
+            console.log(e)
+        }
+
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
             openApp(appScheme, appStoreURLiOS);
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
-        const timeout = 3000;
+        const timeout = 1500;
         const iframe = document.createElement('iframe');
         iframe.style.border = 'none';
         iframe.style.width = '1px';
