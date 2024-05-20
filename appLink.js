@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function startApp()
     {
-        const urlParams = new URLSearchParams(window.location.search);
-        const page = urlParams.get("room");
+
+        const url = new URL(window.location.search);
+        
+        //const urlParams = new URLSearchParams(window.location.search);
+        const page = url.get("room");
         //const appScheme = 'unitydl://mindvr?' + page;
         const appScheme = 'unitydl://mindvr?2';
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
