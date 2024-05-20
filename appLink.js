@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const timeout = 1500;
     function startApp()
     {
-        const appScheme = 'unitydl://mindvr?2';
+        const appScheme = 'unitydl://mindvr';
 
         setTimeout(function() {
 
