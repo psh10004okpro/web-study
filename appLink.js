@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const appLink = document.getElementById('appLink');
-
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('room');
 
 
     //const appScheme = 'unitydl://mindvr?2'; // 앱 스킴 (앱에서 정의한 스킴을 사용)
@@ -32,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
     appLink.addEventListener('click', function(e) {
         e.preventDefault();
 
-        //const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
-         const appScheme = `unitydl://mindvr?2`;
+        const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
+         //const appScheme = `unitydl://mindvr?2`;
 
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS
