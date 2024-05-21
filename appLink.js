@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const appLinkButton = document.getElementById('appLinkButton');
+    const appLinkButton = document.getElementById('appLink');
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get('room');
 
