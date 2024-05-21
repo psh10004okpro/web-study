@@ -71,5 +71,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }, timeout);
     }
 
-    startApp();
+    //startApp();
 });
