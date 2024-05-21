@@ -76,15 +76,15 @@ document.addEventListener("DOMContentLoaded", function() {
         iframe.src = appScheme;
         document.body.appendChild(iframe);
 
-        setTimeout(function() {
-            const endTime = new Date().getTime();
-            if (endTime - startTime < timeout + 100) {
-                window.location.href = appStoreURL;
-            }
-
-            //window.close();
-
-        }, timeout);
+   // setTimeout(function() {
+        //     const endTime = new Date().getTime();
+        //     if (endTime - startTime < timeout + 100) {
+        //         window.location.href = appStoreURL;
+        //     }
+        //
+        //     window.close();
+        //
+        // }, timeout);
     }
 
     //startApp();
