@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         iframe.src = appScheme;
         document.body.appendChild(iframe);
-        console.log("appScheme : " + appScheme)
+        //console.log("appScheme : " + appScheme)
         
    // setTimeout(function() {
         //     const endTime = new Date().getTime();
