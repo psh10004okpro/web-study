@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     
-    document.getElementById('appLink').click();
+    //document.getElementById('appLink').click();
     // function startApp()
     // {
     //     const appScheme = 'unitydl://mindvr?2';
