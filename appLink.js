@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  
+    const appLinkButton = document.getElementById('appLinkButton');
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get('room');
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
     
     
-    appLink.addEventListener('click', function(e) {
+    appLinkButton.addEventListener('click', function(e) {
         e.preventDefault();
 
         const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
