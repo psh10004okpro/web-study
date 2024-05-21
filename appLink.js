@@ -65,10 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (endTime - startTime < timeout + 100) {
                 window.location.href = appStoreURL;
             }
-            else
-            {
-                window.close();
-            }
+            
+            window.close();
+            
         }, timeout);
     }
 
