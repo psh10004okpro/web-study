@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 window.location.href = appStoreURL;
             }
 
-            window.close();
+            //window.close();
 
         }, timeout);
     }
