@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Android
         openApp(appScheme, appStoreURL);
     } else {
+
+        openApp(appScheme, appStoreURL);
         // Other platforms or fallback
-        window.location.href = appStoreURL;
+        //window.location.href = appStoreURL;
     }
     
     //document.getElementById('appLink').click();
@@ -75,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         iframe.src = appScheme;
         document.body.appendChild(iframe);
-
+        console.log("appScheme : " + appScheme)
+        
    // setTimeout(function() {
         //     const endTime = new Date().getTime();
         //     if (endTime - startTime < timeout + 100) {
