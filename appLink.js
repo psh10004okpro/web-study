@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     //const appLinkButton = document.getElementById('appLink');
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('room');
+    //const urlParams = new URLSearchParams(window.location.search);
+    //const page = urlParams.get('room');
 
 
     //const appScheme = 'unitydl://mindvr?2'; // 앱 스킴 (앱에서 정의한 스킴을 사용)
@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const appStoreURLiOS = 'https://apps.apple.com/app/id6449755259'; // 앱 스토어 URL (App Store 예시)
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
-    //const appScheme = `unitydl://mindvr?2`;
+    //const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
+    const appScheme = `unitydl://mindvr?2`;
 
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS
