@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     //const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}`;
-    const appScheme = `unitydl://mindvr?${encodeURIComponent(page)}&{encodeURIComponent(page2)}`;    
+    const appScheme = `unitydl://mindvridge?${encodeURIComponent(page)}&{encodeURIComponent(page2)}`;    
 
 
     openApp(appScheme, appStoreURL);
