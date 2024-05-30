@@ -9,7 +9,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const appScheme = `unitydl://mindvridge?${encodeURIComponent(page)}&${encodeURIComponent(page2)}`;
 
-    openApp(appScheme, appStoreURL);
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+     // iOS
+         openApp(appScheme, appStoreURLiOS);
+     } else if (/android/i.test(userAgent)) {
+         // Android
+         openApp(appScheme, appStoreURL);
+     } else {
+        // Other platforms or fallback
+        window.location.href = appStoreURL;
+    }
+    
+    //openApp(appScheme, appStoreURL);
     
     function openApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
